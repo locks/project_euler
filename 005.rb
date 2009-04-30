@@ -1,7 +1,29 @@
-sum = 0
+class Numero
+	attr_accessor :numero, :clean
 
-(1..1000).each do |x|
-	sum = sum + x**x
+	def initialize(numero)
+		@numero = numero
+		@clean = false
+	end
+
+	def next
+		@numero += 1
+	end
+
+	def clean?(i_min, i_max)
+		(i_min..i_max).each do |i|
+			(@numero % i == 0) ?
+				@flag = true : @flag = false
+		end
+	end
 end
 
-puts sum
+lol = Numero.new(1)
+
+while (!lol.clean)
+	
+	lol.clean?(1, 10)
+	puts lol.numero
+
+	lol.next
+end
