@@ -1,11 +1,9 @@
-file = File.new("013.txt", "r")
+soma = 0;
 
-text = file.readlines.map { |line| line.chomp }
-
-// soma = 0;
-
-text.each do |linha|
-	soma = soma + linha.to_i;
+File.open("013.txt", "r") do |file|
+	file.each_line do |line|
+		soma = soma + line.to_i;
+	end
 end
 
-puts soma.to_s.slice 0...10
+puts soma.to_s.slice(0...10)
