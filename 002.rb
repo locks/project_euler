@@ -9,7 +9,7 @@ numero = 2
 sum = 0
 fib = Array.new
 
-while numero < 4000000
+while numero < 4_000_000
 	fib.push numero
 	
 	temporario = numero
@@ -21,5 +21,4 @@ fib.each do |i|
 	sum = sum + i
 end
 
-puts fib
-puts "sum " + sum.to_s
+puts sum
