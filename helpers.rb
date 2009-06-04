@@ -2,11 +2,10 @@ module Metodos
 	def fibonacci(first, second, limit)
 		sequence = [first, second]
 
-		while sequence.last < limit do
+		while sequence.last < limit-1 do
 			sequence.push( sequence.last(2).inject(0) { |sum, number| sum + number } )
 		end
 
-		sequence.pop
 		return sequence
 	end
 	
