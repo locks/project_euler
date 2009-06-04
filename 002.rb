@@ -1,24 +1,16 @@
-def conta(n, pre)
-	n = n*4 + pre
-end
+require File.join(File.dirname(__FILE__), "helpers.rb")
 
-## TRALALA
-
-anterior = 0
-numero = 2
-sum = 0
-fib = Array.new
-
-while numero < 4_000_000
-	fib.push numero
+class P002
+	include Metodos
+	attr_reader :resultset, :sequence
 	
-	temporario = numero
-	numero = numero*4 + anterior
-	anterior = temporario
-end
+	def initialize(first, second, limit)
+		@sequence  = fibonacci(first, second, limit)
+		@resultset = 0
+	end
 
-fib.each do |i|
-	sum = sum + i
+	def calcular
+		@sequence.each { |number| @resultset += number if number%2==0 }
+		@resultset
+	end
 end
-
-puts sum

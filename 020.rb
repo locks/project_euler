@@ -1,14 +1,19 @@
-def fact(n)
-	return 1 if n == 0
-	n * fact(n-1)
-end
+require File.join(File.dirname(__FILE__), "helpers.rb")
 
-def sum(n)
-	sum = 0
+class P020
+	include Metodos
+	attr_reader :result, :digits
 	
-	n.each do |i|
-		sum += i
+	def initialize
+		@result = 0
+		@digits = 0
+	end
+	
+	def get_digits
+		@digits = fact(100)
+	end
+	
+	def sum
+		@result = sum_digits( @digits )
 	end
 end
-
-lol = fact(100).to_s.split("").map{ |i| i.to_i}
